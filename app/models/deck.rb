@@ -1,6 +1,6 @@
-DECK = {
+Deck = {
     reverse: 'https://upload.wikimedia.org/wikipedia/commons/8/86/Reverso_baraja_espa%C3%B1ola.svg',
-    
+
     0 => {
         name: "2 Clubs",
         short: "2C",
@@ -313,5 +313,4 @@ DECK = {
         uni: "A♠",
         img: "https://commons.wikimedia.org/wiki/File:Ace_of_spades2.svg"
     }
-
 }

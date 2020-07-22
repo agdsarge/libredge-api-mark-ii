@@ -7,6 +7,17 @@ class Game < ApplicationRecord
 
     after_initialize :set_init_values
 
+    def self.open_games
+        self.where(completed: false).filter{|g| g.players.count < 4 }
+    end
+
+    def self.my_games(player_id)
+        pl = Player.find(player_id)
+        mine = self.where(completed: false).filter{|g| g.players.include?(pl)}
+        available = mine + self.open_games
+        available.uniq
+    end
+
     private
 
     def set_init_values

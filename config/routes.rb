@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :deals, only: [:create]
     mount ActionCable.server => '/cable'
 
+    get '/lobby/:id', to: 'games#special_index'
+
     namespace :api do
             namespace :v1 do
 

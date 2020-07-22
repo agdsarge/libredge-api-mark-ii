@@ -3,6 +3,10 @@ class GamesController < ApplicationController
         render json: Game.all
     end
 
+    def special_index
+        render json: Game.my_games(params[:id])
+    end
+
     def create
         game = Game.new
         if game.save

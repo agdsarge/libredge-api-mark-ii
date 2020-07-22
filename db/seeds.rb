@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Player.destroy_all
+Game.destroy_all
+Deal.destroy_all
+PlayerGame.destroy_all
+
 mtm = Player.create(username: "mary_tyler_moore", password: "password", email: "mtm@comedy.com")
 bean = Player.create(username: "mr_bean", password: "password", email: "mr_b_and_teddy@bbc.co.uk")
 lk = Player.create(username: "leslie_knope", password: "password", email: "leslie@pawnee.gov")
