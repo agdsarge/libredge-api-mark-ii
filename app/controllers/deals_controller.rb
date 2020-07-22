@@ -10,6 +10,9 @@ class DealsController < ApplicationController
         end
     end
 
+    def update
+        
+    end
 
     def deal_params
         params.require(:deal).permit(:dealer, :game_id)

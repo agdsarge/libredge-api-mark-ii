@@ -20,6 +20,9 @@ test_game1 = Game.create(memorable_string_name: "FirstSimpleTestGame", completed
 test_game2 = Game.create(memorable_string_name: "SecondSimpleTestGame", completed:false)
 test_game3 = Game.create(memorable_string_name: "ThirdSimpleTestGame", completed: false)
 
+Deal.create(game_id: test_game2.id)
+
+
 PlayerGame.create(player_id: mtm.id, game: test_game1, position: :north)
 PlayerGame.create(player_id: bean.id, game: test_game1, position: :south)
 PlayerGame.create(player_id: lk.id, game: test_game1, position: :east)

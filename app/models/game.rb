@@ -5,7 +5,7 @@ class Game < ApplicationRecord
     has_many :player_games
     has_many :players, through: :player_games
 
-    after_initialize :set_init_values
+    after_create :set_init_values
 
     def self.open_games
         self.where(completed: false).filter{|g| g.players.count < 4 }
@@ -14,8 +14,9 @@ class Game < ApplicationRecord
     def self.my_games(player_id)
         pl = Player.find(player_id)
         mine = self.where(completed: false).filter{|g| g.players.include?(pl)}
-        available = mine + self.open_games
-        available.uniq
+        # available = mine + self.open_games
+        # available.uniq
+        mine
     end
 
     private
