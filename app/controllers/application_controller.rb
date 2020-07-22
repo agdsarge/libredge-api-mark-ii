@@ -1,4 +1,4 @@
-
+require_relative '../../tokens_and_keys.rb'
 class ApplicationController < ActionController::API
     def encode_token(payload)
         JWT.encode(payload, KEY, 'HS256')
