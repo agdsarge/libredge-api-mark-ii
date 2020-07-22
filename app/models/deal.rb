@@ -16,7 +16,11 @@ class Deal < ApplicationRecord
         end
     end
 
+
+
+
     private
+
     def shuffle
         self.deck_permutation = (0..51).to_a.shuffle.join(':')
         self.bid_phase = true
