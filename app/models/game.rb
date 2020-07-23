@@ -1,8 +1,8 @@
 require_relative "./word.rb"
 
 class Game < ApplicationRecord
-    has_many :deals
-    has_many :player_games
+    has_many :deals, dependent: :destroy
+    has_many :player_games, dependent: :destroy
     has_many :players, through: :player_games
 
     after_create :set_init_values
