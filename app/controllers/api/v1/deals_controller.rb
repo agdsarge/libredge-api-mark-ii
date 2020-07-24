@@ -7,6 +7,10 @@ class Api::V1::DealsController < ApplicationController
 
     end
 
+    def show
+        render json: Deal.find(params[:id])
+    end
+
     def create
 
     end
@@ -16,7 +20,7 @@ class Api::V1::DealsController < ApplicationController
         if params[:bid_history]
             deal.bid_history += params[:bid_history]
             deal.save
-            render json: deal
+            render json: deal.game
         else
             deal.update(deal_params)
         end

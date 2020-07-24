@@ -16,7 +16,7 @@ class Game < ApplicationRecord
         mine = self.where(completed: false).filter{|g| g.players.include?(pl)}
         # available = mine + self.open_games
         # available.uniq
-        mine
+        mine #change with improvements
     end
 
     private
