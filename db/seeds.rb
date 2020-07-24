@@ -11,10 +11,10 @@ Game.destroy_all
 Deal.destroy_all
 PlayerGame.destroy_all
 
-mtm = Player.create(username: "mary_tyler_moore", password: "password", email: "mtm@comedy.com")
-bean = Player.create(username: "mr_bean", password: "password", email: "mr_b_and_teddy@bbc.co.uk")
-lk = Player.create(username: "leslie_knope", password: "password", email: "leslie@pawnee.gov")
-rmn = Player.create(username: "richard_nixon", password: "password", email: "rmn37@whitehouse.gov")
+mtm = Player.create(username: "mary_tyler_moore", password: "password", email: "mtm@comedy.com", country: "United States")
+bean = Player.create(username: "mr_bean", password: "password", email: "mr_b_and_teddy@bbc.co.uk", country: "United Kingdom")
+lk = Player.create(username: "leslie_knope", password: "password", email: "leslie@pawnee.gov", country: "United States")
+rmn = Player.create(username: "richard_nixon", password: "password", email: "rmn37@whitehouse.gov", country: "United States")
 
 test_game1 = Game.create(memorable_string_name: "FirstSimpleTestGame", completed: true, final_score: 90)
 test_game2 = Game.create(memorable_string_name: "SecondSimpleTestGame", completed:false)

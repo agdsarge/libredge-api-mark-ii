@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 
-    
+
 
     get '/lobby/:id', to: 'games#special_index'
     get '/hand/:deal/:position', to: 'deals#request_hand'
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
                 # get '/games/:id', to: 'games#show'
                 # post '/games', to: 'games#create'
                 #
+                get '/lobby/:id', to: 'games#special_index'
                 get '/players', to: 'players#index'
                 post '/players', to: 'players#create'
                 #

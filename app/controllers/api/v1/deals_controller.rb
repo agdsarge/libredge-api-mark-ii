@@ -1,4 +1,4 @@
-class DealsController < ApplicationController
+class Api::V1::DealsController < ApplicationController
 
     def request_hand
         deal = Deal.find(params[:deal])

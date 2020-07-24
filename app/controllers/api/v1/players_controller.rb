@@ -3,6 +3,10 @@ class Api::V1::PlayersController < ApplicationController
         render json: Player.all.to_json(except: [:password_digest, :created_at, :updated_at])
     end
 
+    def profile # good request for debugging
+        render json: {message: "HELLO WORLD"}
+    end
+
     def create
         # puts ("NEW PLAYER")
         # puts(params)
