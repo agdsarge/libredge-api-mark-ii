@@ -13,11 +13,13 @@ class Game < ApplicationRecord
 
     def self.my_games(player_id)
         pl = Player.find(player_id)
-        mine = self.where(completed: false).filter{|g| g.players.include?(pl)}
+        self.where(completed: false).filter{|g| g.players.include?(pl)}
         # available = mine + self.open_games
         # available.uniq
-        mine #change with improvements
+        # #change with improvements
     end
+
+    
 
     private
 
@@ -32,6 +34,9 @@ class Game < ApplicationRecord
         self.final_score = 0 unless self.final_score
         self.completed = false unless self.completed
         self.save
+        # unless self.deals.length > 0
+        #     Deal.new(game: self)
+        # end
     end
 
 end

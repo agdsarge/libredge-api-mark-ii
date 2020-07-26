@@ -3,6 +3,11 @@ class Api::V1::PlayersController < ApplicationController
         render json: Player.all.to_json(except: [:password_digest, :created_at, :updated_at])
     end
 
+    def available_players
+        me = Player.find(params[:id])
+        render json: Player.all.filter{|p| p != me}.to_json(only: [:id, :username])
+    end
+
     def profile # good request for debugging
         render json: {message: "HELLO WORLD"}
     end

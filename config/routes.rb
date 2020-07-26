@@ -4,11 +4,11 @@ Rails.application.routes.draw do
     # get '/lobby/:id', to: 'games#special_index'
     namespace :api do
             namespace :v1 do
-                resources :games, only: [:index, :create]
+                resources :games, only: [:index]
                 resources :deals, only: [:create, :update, :show]
-
+                get 'games/available_players/:id', to: 'players#available_players'
                 get '/games/latest_deal/:id', to: 'games#latest_deal'
-                # post '/games', to: 'games#create'
+                post '/games/new', to: 'games#create'
                 #
                 get '/lobby/:id', to: 'games#special_index'
                 get '/players', to: 'players#index'
