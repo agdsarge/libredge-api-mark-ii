@@ -16,24 +16,30 @@ bean = Player.create(username: "mr_bean", password: "password", email: "mr_b_and
 lk = Player.create(username: "leslie_knope", password: "password", email: "leslie@pawnee.gov", country: "United States")
 rmn = Player.create(username: "richard_nixon", password: "password", email: "rmn37@whitehouse.gov", country: "United States")
 
-test_game1 = Game.create(memorable_string_name: "FirstSimpleTestGame", completed: true, final_score: 90)
-test_game2 = Game.create(memorable_string_name: "SecondSimpleTestGame", completed:false)
-test_game3 = Game.create(memorable_string_name: "ThirdSimpleTestGame", completed: false)
+p = Player.create(username: "primus", password: "password", email: "primus@senate.gov", country: "Italy")
+s = Player.create(username: "secundus", password: "password", email: "secundus@senate.gov", country: "Turkey")
+t = Player.create(username: "tertius", password: "password", email: "tertius@pawnee.gov", country: "Greece")
+q = Player.create(username: "quartus", password: "password", email: "quartus@pawnee.gov", country: "France")
 
-Deal.create(game_id: test_game2.id)
+
+# test_game1 = Game.create(memorable_string_name: "FirstSimpleTestGame", completed: true, final_score: 90)
+# test_game2 = Game.create(memorable_string_name: "SecondSimpleTestGame", completed:false)
+# test_game3 = Game.create(memorable_string_name: "ThirdSimpleTestGame", completed: false)
+
+# Deal.create(game_id: test_game2.id)
 
 
-PlayerGame.create(player_id: mtm.id, game: test_game1, position: :north)
-PlayerGame.create(player_id: bean.id, game: test_game1, position: :south)
-PlayerGame.create(player_id: lk.id, game: test_game1, position: :east)
-PlayerGame.create(player_id: rmn.id, game: test_game1, position: :west)
-
-PlayerGame.create(player_id: mtm.id, game: test_game2, position: :north)
-PlayerGame.create(player_id: bean.id, game: test_game2, position: :south)
-PlayerGame.create(player_id: lk.id, game: test_game2, position: :east)
-PlayerGame.create(player_id: rmn.id, game: test_game2, position: :west)
-
-PlayerGame.create(player_id: mtm.id, game: test_game3, position: :north)
+# PlayerGame.create(player_id: mtm.id, game: test_game1, position: :north)
+# PlayerGame.create(player_id: bean.id, game: test_game1, position: :south)
+# PlayerGame.create(player_id: lk.id, game: test_game1, position: :east)
+# PlayerGame.create(player_id: rmn.id, game: test_game1, position: :west)
 #
-PlayerGame.create(player_id: lk.id, game: test_game3, position: :east)
-PlayerGame.create(player_id: rmn.id, game: test_game3, position: :west)
+# PlayerGame.create(player_id: mtm.id, game: test_game2, position: :north)
+# PlayerGame.create(player_id: bean.id, game: test_game2, position: :south)
+# PlayerGame.create(player_id: lk.id, game: test_game2, position: :east)
+# PlayerGame.create(player_id: rmn.id, game: test_game2, position: :west)
+#
+# PlayerGame.create(player_id: mtm.id, game: test_game3, position: :north)
+# #
+# PlayerGame.create(player_id: lk.id, game: test_game3, position: :east)
+# PlayerGame.create(player_id: rmn.id, game: test_game3, position: :west)

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
                 resources :deals, only: [:create, :update, :show]
                 get 'games/available_players/:id', to: 'players#available_players'
                 get '/games/latest_deal/:id', to: 'games#latest_deal'
+                get '/deals/history/:id', to: 'deals#history'
                 post '/games/new', to: 'games#create'
                 #
                 get '/lobby/:id', to: 'games#special_index'
