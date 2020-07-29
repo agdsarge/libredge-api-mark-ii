@@ -10,8 +10,6 @@ class Deal < ApplicationRecord
 
     def hand(player_position)
         dk = Deck.all_cards
-        p dk[0]
-        p "YIKES"
         case player_position
         when "north"
             (0..12).map {|n| dk[self.deck_permutation.split(':')[n*4]] }.sort {|a, b| a[:ord] <=> b[:ord] } #+ [DECK["reverse"]]
@@ -24,9 +22,9 @@ class Deal < ApplicationRecord
 
         end
     end
-
         #make this DRY.
 
+    
 
     private
 

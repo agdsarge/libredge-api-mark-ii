@@ -4,11 +4,15 @@ Rails.application.routes.draw do
     # get '/lobby/:id', to: 'games#special_index'
     namespace :api do
             namespace :v1 do
-                resources :games, only: [:index]
+                resources :games, only: [:index, :show]
                 resources :deals, only: [:create, :update, :show]
-                get 'games/available_players/:id', to: 'players#available_players'
+
+                get '/games/finish/:id', to: 'games#finish'
+
+                get '/games/available_players/:id', to: 'players#available_players'
                 get '/games/latest_deal/:id', to: 'games#latest_deal'
                 get '/deals/history/:id', to: 'deals#history'
+                get '/deals/:id/play/:trick', to: 'deals#trick_request'
                 post '/games/new', to: 'games#create'
                 #
                 get '/lobby/:id', to: 'games#special_index'
@@ -20,7 +24,7 @@ Rails.application.routes.draw do
                 post '/login', to: 'auth#create'
                 get '/profile', to: 'players#profile'
                 get '/token', to: 'auth#jwt_log_in'
-                get 'hand/:deal/:position', to: "deals#request_hand"
+                get '/hand/:deal/:position', to: "deals#request_hand"
             end
         end
 end

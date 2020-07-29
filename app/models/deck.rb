@@ -98,7 +98,7 @@ class Deck
                 ord: 13,
                 name: "2 of Diamonds",
                 short: "2D",
-                uni: "♢",
+                uni: "2♢",
                 img: "https://upload.wikimedia.org/wikipedia/commons/8/8d/2_of_diamonds.svg"
             },
             '14' => {

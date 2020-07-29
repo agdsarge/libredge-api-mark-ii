@@ -19,7 +19,7 @@ class Game < ApplicationRecord
         # #change with improvements
     end
 
-    
+
 
     private
 

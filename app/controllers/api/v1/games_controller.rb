@@ -3,6 +3,10 @@ class Api::V1::GamesController < ApplicationController
         render json: Game.all
     end
 
+    def show
+        render json: Game.find(params[:id])
+    end
+
     def special_index
         render json: Game.my_games(params[:id])
     end
@@ -23,12 +27,23 @@ class Api::V1::GamesController < ApplicationController
         render json: new_game.to_json(only: :memorable_string_name)
     end
 
+    def new_deal
+        game = Game.find(params[:id])
+        Deal.create(game: game, dealer: params[:dealer])
+    end
+
+    def finish
+        game = Game.find(params[:id])
+        game.completed = true
+        game.save
+
+    end
 
 
     private
 
     def game_params
-
+        params.require(:deals).permit(:id, :north, :east, :west, :south, :dealer, :completed)
     end
 
 end
